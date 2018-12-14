@@ -332,8 +332,6 @@ case object BasicApp extends DeployableApp {
 
       dockerBaseImage := "openjdk:8-jre-alpine",
 
-      dockerEntrypoint := Vector.empty,
-
       (daemonUser in Docker) := runAsUser.value,
       (daemonGroup in Docker) := (if (runAsUserGroup.value.isEmpty) runAsUser.value else runAsUserGroup.value),
 
